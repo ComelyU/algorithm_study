@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class PGM42748 {
+    public int[] solution(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];
+
+        for(int i = 0; i < commands.length; i++) {
+            int[] sortArray = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1]);
+            Arrays.sort(sortArray);
+
+            answer[i] = sortArray[commands[i][2] - 1];
+        }
+
+        return answer;
+    }
+
+}
